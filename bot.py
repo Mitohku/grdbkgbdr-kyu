@@ -13,8 +13,6 @@ import logging
 import traceback
 import aiohttp
 from collections                import Counter
-import config
-from config                     import *
 import asyncpg
 
 log = logging.getLogger(__name__)
