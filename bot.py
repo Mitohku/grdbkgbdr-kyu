@@ -960,13 +960,13 @@ async def advert(ctx):
     await adv1.send(embed = embed)
     await ctx.send(ctx.message.author, "Thanks for your advertisement!")        
         
+class Core:
+def __init__(self, bot):
+    self.bot = bot
+    self.initialtime = time.time()
+    
 @bot.command()
 async def cl(self):
-
-    class Core:
-    def __init__(self, bot):
-        self.bot = bot
-        self.initialtime = time.time()
     
     data = json.load(open('cogs/data/changelogs.json'))
 
