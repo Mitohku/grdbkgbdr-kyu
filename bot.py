@@ -644,14 +644,19 @@ async def about(self):
         avi3 = 'https://cdn.discordapp.com/avatars/' + stat2.avatar_url[35:-10]
     else:
         avi3 = stat2.avatar_url
-        
+
+
+    cpu_speed = int(float("{0[2]}".format(psutil.cpu_freq()))) / 1000
+    mem = int(float(psutil.virtual_memory().total)) / 1000000000
+    memory_total = mem - 1
+
     stat1.set_thumbnail(url = avi3)
     stat1.set_author(name= stat2, icon_url= avi3)
     stat1.description= f"**[Official Spirit | 精霊 <:bot:389862148395761664> Support Server](https://discord.gg/efF93Gz)**"
     stat1.add_field(name= "Members in all Serversㅤ", value=f"Total Servers: **{servers}** \nTotal Users: **{members}** \nTotal Uniques: **{total_unique}** \nTotal Online: **{total_online}** \nTotal BOTS: **{total_bots}**", inline=True)
     stat1.add_field(name= "Channels in all Servers", value=f"Total Categories: **{categories}** \nTotal Channels: **{channels}** \nText Channels: **{texts}** \nVoice Channels: **{voices}**", inline=True)
     stat1.add_field(name= "Program Informations", value=f"Program Language: **<:pythonbot:392172368023388160> 3.6.3** \nDiscord Program: **Discord.py** \nProgram Version: **1.0.0a**", inline=True)
-    stat1.add_field(name= "ㅤRun/Bot Informations", value=f"ㅤRunning on: **Intel® Core™ 2 Duo** \nㅤEdited with: **Atom** <:Atom:392113050083131402>\n\nㅤ*More with `shelpme` command*", inline=True)
+    stat1.add_field(name= "ㅤRun/Bot Informations", value=f"ㅤRunning on: **Intel® Core™ 2 Duo** \nㅤEdited with: **Atom** <:Atom:392113050083131402> \nㅤProcess: **{cpu_usage:.2f}**%/**{cpu_speed:.1f}**GHz \nㅤMemory: **{memory_usage:.2f}**MiB/**{memory_total:.0f}**GB\n\nㅤ*More with `shelpme` command*", inline=True)
     stat1.set_footer(text=f"Spirit | 精霊 is active in {servers} servers, containing {members} members.", icon_url=avi3)
     stat1.description= f"\n"
     await self.send(embed = stat1)
