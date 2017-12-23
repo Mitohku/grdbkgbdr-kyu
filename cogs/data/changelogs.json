@@ -3,7 +3,6 @@
         "changelogs": [
             {
                 "date": "December 23, 2017",
-                "version": "",
     
                 "added": "- Partner Command(**spartner**)\n*Shows the Partner menu",
                 "removed": "",
