@@ -924,6 +924,32 @@ async def partner(ctx, *, pmessage : str = None):
         embed.add_field(name = "ㅤspartner server", value = "ㅤShows the full list of our Partnered Servers <:discord:390659518658379776>", inline=True)
         await ctx.send(embed = embed)
 
+@bot.command(pass_context=True)
+@commands.cooldown(1, 3600, commands.BucketType.user)
+async def advert(ctx):
+    await bot.say("I'll be asking a series of questions...")
+    await asyncio.sleep(5.0)
+    await bot.say("What is your server name?")
+    name = await bot.wait_for_message(timeout = 30.0, author = ctx.message.author)
+    await bot.say("How many **humans** are in your server?")
+    humans = await bot.wait_for_message(timeout = 30.0, author = ctx.message.author)
+    await bot.say("Provide a **detailed** description of your server.")
+    desc = await bot.wait_for_message(timeout = 30.0, author = ctx.message.author)
+    await bot.say("Finally, provide a **permanent** invite link.")
+    inv = await bot.wait_for_message(timeout = 30.0, author = ctx.message.author)
+#    await bot.purge_from(ctx.message.channel, limit = 8)
+    await bot.say("**✅ | Your advertisement has been entered!**")
+    embed = discord.Embed(title = "New Advert!", color = ctx.message.author.color, description = "**" + ctx.message.author.name + "#" + ctx.message.author.discriminator + " ID: " + ctx.message.author.id + "**", timestamp = datetime.datetime.utcnow())
+    embed.add_field(name = "Server Name", value = name.content)
+    embed.add_field(name = "Humans", value = humans.content)
+    embed.add_field(name = "Description", value = desc.content)
+    embed.add_field(name = "Invite", value = inv.content)
+    embed.set_author(name = ctx.message.author.name, icon_url = ctx.message.author.avatar_url)
+    embed.set_footer(text = "Advert")
+    await bot.send_message(bot.get_channel("393669769649192960"), embed = embed)
+    await bot.send_message(ctx.message.author, "Thanks for your advertisement! If you'd like to check it out you can join Cosmos's Hub at https://discord.gg/pDvJZEN")
+        
+        
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if not os.environ.get('TOKEN'):
