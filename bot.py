@@ -84,7 +84,7 @@ async def server(ctx):
 
     invite1.set_thumbnail(url = avi2)
 
-    invite1.description = f"<:yamaiyuzuru1:391525066304782336> Need some help with **Spirit | 精霊** <:bot:389862148395761664>? Here is a link you can use to Support Server! <:yamaikaguya1:391525065608658945>\n\nhttps://discord.gg/efF93Gz
+    invite1.description = f"<:yamaiyuzuru1:391525066304782336> Need some help with **Spirit | 精霊** <:bot:389862148395761664>? Here is a link you can use to Support Server! <:yamaikaguya1:391525065608658945>\n\nhttps://discord.gg/efF93Gz"
 
     await ctx.send(embed = invite1)
     
