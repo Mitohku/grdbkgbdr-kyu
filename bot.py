@@ -959,15 +959,15 @@ async def advert(ctx):
     adv1 = bot.get_channel("391876763069972480")
     await adv1.send(embed = embed)
     await ctx.send(ctx.message.author, "Thanks for your advertisement!")        
-        
-class Core:
-def __init__(self, bot):
-    self.bot = bot
-    self.initialtime = time.time()
     
 @bot.command()
 async def cl(self):
     
+    class Core:
+        def __init__(self, bot):
+            self.bot = bot
+            self.initialtime = time.time()
+        
     data = json.load(open('cogs/data/changelogs.json'))
 
     logs_author         = self.bot.get_user(self.bot.owner_id)
