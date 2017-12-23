@@ -963,6 +963,11 @@ async def advert(ctx):
 @bot.command()
 async def cl(self):
 
+    class Core:
+    def __init__(self, bot):
+        self.bot = bot
+        self.initialtime = time.time()
+    
     data = json.load(open('cogs/data/changelogs.json'))
 
     logs_author         = self.bot.get_user(self.bot.owner_id)
