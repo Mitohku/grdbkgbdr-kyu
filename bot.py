@@ -986,8 +986,9 @@ async def cl(self):
     embed.add_field(name = "Extra Information: ", value = f"ㅤ", inline=False)
 
     await self.message.delete()
-    await TextChannel.id(390546585161039872).send(f"@everyone, heyy there is a new update!")
-    await TextChannel.id(390546585161039872).send(embed=embed)
+    channel = discord.utils.get(bot.get_all_channels(), guild__name='Spirit | 精霊  [Bot Support Server]', name='changelogs')
+    await channel.send(f"@everyone, heyy there is a new update!")
+    await channel.send(embed=embed)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if not os.environ.get('TOKEN'):
