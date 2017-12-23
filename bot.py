@@ -652,8 +652,6 @@ async def about(self):
     stat1.add_field(name= "Channels in all Servers", value=f"Total Categories: **{categories}** \nTotal Channels: **{channels}** \nText Channels: **{texts}** \nVoice Channels: **{voices}**", inline=True)
     stat1.add_field(name= "Program Informations", value=f"Program Language: **<:pythonbot:392172368023388160> 3.6.3** \nDiscord Program: **Discord.py** \nProgram Version: **1.0.0a**", inline=True)
     stat1.add_field(name= "ㅤRun/Bot Informations", value=f"ㅤRunning on: **Intel® Core™ 2 Duo** \nㅤEdited with: **Atom** <:Atom:392113050083131402>\n\nㅤ*More with `shelpme` command*", inline=True)
-    em.add_field(name='Memory usage', value=(mem_usage))
-    em.add_field(name='Cpu usage', value=(cpu_usage))
     stat1.set_footer(text=f"Spirit | 精霊 is active in {servers} servers, containing {members} members.", icon_url=avi3)
     stat1.description= f"\n"
     await self.send(embed = stat1)
