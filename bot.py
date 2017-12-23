@@ -998,10 +998,10 @@ async def cl(self):
             embed.set_thumbnail(url = avi1)
             embed.set_author(name = f"Changelog: {date}.", icon_url = avi1)
             embed.set_footer(text = f"Created by {developer} on {date}", icon_url = avi)
-            embed.add_field(name = "Added:", value = f"- Partner Command (**spartner**)\n*Shows the partner menu*\n\n- Changelogs (**schangelogs**)\n*Sends recent changes in #changelogs*", inline=False)
+            embed.add_field(name = "Added:", value = f"- Support Command (**ssupport**)\n*Gives link to Support Server*", inline=False)
             embed.add_field(name = "Removed: ", value = f"ㅤ", inline=False)
-            embed.add_field(name = "Changed: ", value = f"- Bot Hosted *(24/7 online)*", inline=False)
-            embed.add_field(name = "Fixed: ", value = f"ㅤ", inline=False)
+            embed.add_field(name = "Changed: ", value = f"ㅤ", inline=False)
+            embed.add_field(name = "Fixed: ", value = f"- Corrected **Changelogs Command**", inline=False)
             embed.add_field(name = "Extra Information: ", value = f"ㅤ", inline=False)
 
             await self.message.delete()
