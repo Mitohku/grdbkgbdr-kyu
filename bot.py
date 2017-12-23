@@ -913,7 +913,7 @@ async def partner(ctx, *, pmessage : str = None):
         embed = discord.Embed(colour = 0xA522B3)
         embed.set_author(name = "[PARTNERS LIST]", icon_url = "https://cdn.discordapp.com/emojis/391999921349197824.png")
         embed.description = "*These lists use a long time to be updated, if you not on after 1h:  `sfeedback`*"
-        embed.add_field(name = f"ㅤ¤ Partnered Servers <:discord:390659518658379776>", value = "*Spirit | 精霊  [Bot Support Server]*  **⇨** [https://discord.gg/efF93Gz](https://discord.gg/efF93Gz)\n\n*OtakuAnimeGamerzGuild*  **⇨** [https://discord.gg/vX9yGxa](https://discord.gg/vX9yGxa)", inline=False)
+        embed.add_field(name = f"ㅤ¤ Partnered Servers <:discord:390659518658379776>", value = "*Spirit | 精霊  [Bot Support Server]*  **⇨** [https://discord.gg/efF93Gz](https://discord.gg/efF93Gz)\n\n*OtakuAnimeGamerzGuild*  **⇨** [https://discord.gg/vX9yGxa](https://discord.gg/vX9yGxa)\n\n*❄ COOKIE SERV ❄*  **⇨** [https://discord.gg/k9KNfwy](https://discord.gg/k9KNfwy)", inline=False)
         await ctx.send(embed = embed)
     else:
         embed = discord.Embed(colour = 0xA522B3)
