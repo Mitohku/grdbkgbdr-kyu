@@ -19,7 +19,6 @@ class Changelog():
         
         logs_author         = self.bot.get_user(self.bot.owner_id)
         json_log_date       = data["data"]["changelogs"][0]["date"]
-        json_log_version    = data["data"]["changelogs"][0]["version"]
         json_log_added      = data["data"]["changelogs"][0]["added"]
         json_log_removed    = data["data"]["changelogs"][0]["removed"]
         json_log_changed    = data["data"]["changelogs"][0]["changed"]
@@ -30,7 +29,6 @@ class Changelog():
         embed.set_thumbnail(url = f"{self.bot.user.avatar_url}")
         embed.set_author(name = f"Changelog: {json_log_date}.", icon_url = f"{self.bot.user.avatar_url}")
         embed.set_footer(text = f"Created by {logs_author.name} on {json_log_date}", icon_url = f"{logs_author.avatar_url}")
-        embed.add_field(name = "Version: ", value = f"{json_log_version}", inline=False)
 
         if json_log_added:
             embed.add_field(name = "Added:", value = f"{json_log_added}", inline=False)
@@ -78,7 +76,6 @@ class Changelog():
 
             logs_author         = self.bot.get_user(self.bot.owner_id)
             json_log_date       = data["data"]["changelogs"][0]["date"]
-            json_log_version    = data["data"]["changelogs"][0]["version"]
             json_log_added      = data["data"]["changelogs"][0]["added"]
             json_log_removed    = data["data"]["changelogs"][0]["removed"]
             json_log_changed    = data["data"]["changelogs"][0]["changed"]
@@ -89,7 +86,6 @@ class Changelog():
             embed.set_thumbnail(url = f"{self.bot.user.avatar_url}")
             embed.set_author(name = f"Changelog: {json_log_date}.", icon_url = f"{self.bot.user.avatar_url}")
             embed.set_footer(text = f"Created by {logs_author.name} on {json_log_date}", icon_url = f"{logs_author.avatar_url}")
-            embed.add_field(name = "Version: ", value = f"{json_log_version}", inline=False)
 
             if json_log_added:
                 embed.add_field(name = "Added:", value = f"{json_log_added}", inline=False)
@@ -120,7 +116,7 @@ class Changelog():
                 await ctx.message.delete()
             except:
                 pass
-            await ctx.send(f"<:Noella:384046588345188352> | {role.mention}, yeey there is a new update!")
+            await ctx.send(f"@everyone, heyy there is a new update!")
             await ctx.send(embed=embed)
 
 def setup(bot):
