@@ -13,7 +13,6 @@ import logging
 import traceback
 import aiohttp
 from collections                import Counter
-import asyncpg
 
 log = logging.getLogger(__name__)
 initial_extensions = ('cogs.changelogs')
