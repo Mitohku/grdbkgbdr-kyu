@@ -7,6 +7,21 @@ import time
 import random
 import datetime as dt
 import datetime
+from cogs.utils                 import checks, context, db
+from cogs.utils.config          import Config
+import json, asyncio
+import copy
+import logging
+import traceback
+import aiohttp
+from collections                import Counter
+import config
+from config                     import *
+import asyncpg
+
+log = logging.getLogger(__name__)
+initial_extensions = ('cogs.changelogs')
+
 
 command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
 description = "Mitohku's own BOT" #ALSO CHANGE THIS
