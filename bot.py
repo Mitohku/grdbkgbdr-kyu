@@ -7,8 +7,6 @@ import time
 import random
 import datetime as dt
 import datetime
-from cogs.utils                 import checks, context, db
-from cogs.utils.config          import Config
 import json, asyncio
 import copy
 import logging
