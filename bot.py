@@ -14,9 +14,6 @@ import traceback
 import aiohttp
 from collections                import Counter
 
-log = logging.getLogger(__name__)
-initial_extensions = ('cogs.changelogs')
-
 
 command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
 description = "Mitohku's own BOT" #ALSO CHANGE THIS
