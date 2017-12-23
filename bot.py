@@ -7,7 +7,6 @@ import time
 import random
 import datetime as dt
 import datetime
-import psutil
 
 command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
 description = "Mitohku's own BOT" #ALSO CHANGE THIS
