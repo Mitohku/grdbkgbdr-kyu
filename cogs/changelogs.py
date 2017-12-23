@@ -5,9 +5,7 @@
 import discord
 import random
 import json
-from config import *
 from discord.ext import commands
-from config import embed_color, embed_color_succes, embed_color_error
 
 class Changelog():
     def __init__(self, bot):
@@ -25,7 +23,7 @@ class Changelog():
         json_log_fixed      = data["data"]["changelogs"][0]["fixed"]
         json_log_extra      = data["data"]["changelogs"][0]["extra"]
 
-        embed = discord.Embed(colour = embed_color)
+        embed = discord.Embed(colour = 0xA522B3)
         embed.set_thumbnail(url = f"{self.bot.user.avatar_url}")
         embed.set_author(name = f"Changelog: {json_log_date}.", icon_url = f"{self.bot.user.avatar_url}")
         embed.set_footer(text = f"Created by {logs_author.name} on {json_log_date}", icon_url = f"{logs_author.avatar_url}")
@@ -59,19 +57,11 @@ class Changelog():
             await ctx.message.delete()
         except:
             pass        
-        await ctx.send(embed=embed)
+        await Channel.send((390546585161039872), embed=embed)
 
     @changelogs.command(name = 'tag')
     async def changelogs_tag(self, ctx, *, role : discord.Role = None):
-
-        if not role:
-            try:
-                await ctx.message.delete()
-            except:
-                pass
-            return
-
-        else:
+        
             data = json.load(open('cogs/data/changelogs.json'))
 
             logs_author         = self.bot.get_user(self.bot.owner_id)
@@ -82,7 +72,7 @@ class Changelog():
             json_log_fixed      = data["data"]["changelogs"][0]["fixed"]
             json_log_extra      = data["data"]["changelogs"][0]["extra"]
 
-            embed = discord.Embed(colour = embed_color)
+            embed = discord.Embed(colour = 0xA522B3)
             embed.set_thumbnail(url = f"{self.bot.user.avatar_url}")
             embed.set_author(name = f"Changelog: {json_log_date}.", icon_url = f"{self.bot.user.avatar_url}")
             embed.set_footer(text = f"Created by {logs_author.name} on {json_log_date}", icon_url = f"{logs_author.avatar_url}")
@@ -116,8 +106,8 @@ class Changelog():
                 await ctx.message.delete()
             except:
                 pass
-            await ctx.send(f"@everyone, heyy there is a new update!")
-            await ctx.send(embed=embed)
+            await Channel.send((390546585161039872), f"@everyone, heyy there is a new update!")
+            await Channel.send((390546585161039872), embed=embed)
 
 def setup(bot):
     bot.add_cog(Changelog(bot))
