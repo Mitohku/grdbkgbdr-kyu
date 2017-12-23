@@ -71,6 +71,23 @@ async def on_guild_join(server):
 #    await bot.send_message(bot.get_user('371001497342836737', embed = embed))
 #    await bot.say("**☑  |  Message sent to Rapid**")
 
+@bot.command(aliases = ['support', 'serv'])
+async def server(ctx):
+
+    invite2 = bot.get_user(390478999828037632)
+    invite1 = discord.Embed(colour = discord.Colour(0xA522B3))
+
+    if invite2.avatar_url[54:].startswith('a_'):
+        avi2 = 'https://cdn.discordapp.com/avatars/' + invite2.avatar_url[35:-10]
+    else:
+        avi2 = invite2.avatar_url
+
+    invite1.set_thumbnail(url = avi2)
+
+    invite1.description = f"<:yamaiyuzuru1:391525066304782336> Need some help with **Spirit | 精霊** <:bot:389862148395761664>? Here is a link you can use to Support Server! <:yamaikaguya1:391525065608658945>\n\nhttps://discord.gg/efF93Gz
+
+    await ctx.send(embed = invite1)
+    
 @bot.command(aliases = ['cmds', 'commands'], description = 'Sends a message with commands in DM')
 async def help(ctx):
 
