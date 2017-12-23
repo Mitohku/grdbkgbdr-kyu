@@ -957,38 +957,47 @@ async def advert(ctx):
     await adv1.send(embed = embed)
     await ctx.send(ctx.message.author, "Thanks for your advertisement!")        
     
-@bot.command()
+@bot.command(aliases = ['changelogs'])
 async def cl(self):
+    
+    if await self.bot.is_owner(self.author):
 
-    developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
-    bot1 = bot.get_user(390478999828037632)
+            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            bot1 = bot.get_user(390478999828037632)
 
-    if developer.avatar_url[54:].startswith('a_'):
-        avi = 'https://cdn.discordapp.com/avatars/' + developer.avatar_url[35:-10]
+            if developer.avatar_url[54:].startswith('a_'):
+                avi = 'https://cdn.discordapp.com/avatars/' + developer.avatar_url[35:-10]
+            else:
+                avi = developer.avatar_url
+
+            if bot1.avatar_url[54:].startswith('a_'):
+                avi1 = 'https://cdn.discordapp.com/avatars/' + bot1.avatar_url[35:-10]
+            else:
+                avi1 = bot1.avatar_url
+
+            date = datetime.datetime.utcnow()
+
+            embed = discord.Embed(colour = 0xA522B3)
+            embed.set_thumbnail(url = avi1)
+            embed.set_author(name = f"Changelog: {date}.", icon_url = avi1)
+            embed.set_footer(text = f"Created by {developer} on {date}", icon_url = avi)
+            embed.add_field(name = "Added:", value = f"- Partner Command (**spartner**)\n*Shows the partner menu*\n- Changelogs (**schangelogs**)\n*Sends recent changes in #changelogs*", inline=False)
+            embed.add_field(name = "Removed: ", value = f"ㅤ", inline=False)
+            embed.add_field(name = "Changed: ", value = f"- Bot Hosted *(24/7 online)*", inline=False)
+            embed.add_field(name = "Fixed: ", value = f"ㅤ", inline=False)
+            embed.add_field(name = "Extra Information: ", value = f"ㅤ", inline=False)
+
+            await self.message.delete()
+            channel = discord.utils.get(bot.get_all_channels(), guild__name='Spirit | 精霊  [Bot Support Server]', name='changelogs')
+            await channel.send(f"@everyone, heyy there is a new update!")
+            await channel.send(embed=embed)
     else:
-        avi = developer.avatar_url
+            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            embed = discord.Embed(colour = discord.Colour(0xA522B3)) 
+            embed.set_author(name = f"[CHANGELOGS]")
+            embed.set_footer(text = "You dont have permissions to use this command")
 
-    if bot1.avatar_url[54:].startswith('a_'):
-        avi1 = 'https://cdn.discordapp.com/avatars/' + bot1.avatar_url[35:-10]
-    else:
-        avi1 = bot1.avatar_url
-
-    date = datetime.datetime.utcnow()
-
-    embed = discord.Embed(colour = 0xA522B3)
-    embed.set_thumbnail(url = avi1)
-    embed.set_author(name = f"Changelog: {date}.", icon_url = avi1)
-    embed.set_footer(text = f"Created by {developer} on {date}", icon_url = avi)
-    embed.add_field(name = "Added:", value = f"- Partner Command (**spartner**)\n*Shows the partner menu", inline=False)
-    embed.add_field(name = "Removed: ", value = f"ㅤ", inline=False)
-    embed.add_field(name = "Changed: ", value = f"- Bot Hosted *(24/7 online)*", inline=False)
-    embed.add_field(name = "Fixed: ", value = f"ㅤ", inline=False)
-    embed.add_field(name = "Extra Information: ", value = f"ㅤ", inline=False)
-
-    await self.message.delete()
-    channel = discord.utils.get(bot.get_all_channels(), guild__name='Spirit | 精霊  [Bot Support Server]', name='changelogs')
-    await channel.send(f"@everyone, heyy there is a new update!")
-    await channel.send(embed=embed)
+            await self.send(embed = embed)
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if not os.environ.get('TOKEN'):
