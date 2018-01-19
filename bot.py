@@ -872,7 +872,7 @@ async def userinfo(ctx, *, member: discord.Member = None):
             features1 = "<:youtube1:391994295223189524> **Partnered Youtuber**"
             if member.id in frite:
                 features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
-                features1 = "<:twitch1:392000837750226945> **Partnered Streamer**"
+                features1 = "<:youtube1:391994295223189524> **Partnered Youtuber**"
                 features2 = "<:FRITEUH:403987790410547202> **Team Frite**"
         elif member.id in frite:
             features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
