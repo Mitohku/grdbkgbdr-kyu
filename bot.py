@@ -321,7 +321,7 @@ async def game_watching(self, *, game = None):
 @game.command(name = 'default')
 async def game_default(self):
 
-	bot_prefix = "st"
+	bot_prefix = "s"
 	server = self.guild
 
 	await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
