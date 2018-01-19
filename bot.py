@@ -15,8 +15,8 @@ import aiohttp
 from collections                import Counter
 
 
-command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
-description = "Mitohku's own BOT" #ALSO CHANGE THIS
+command_prefix = "st" #CHANGE IT TO WHAT YOU WANT
+description = "PrestiG's own BOT" #ALSO CHANGE THIS
 bot = commands.Bot(command_prefix, description = description)
 bot.remove_command('help')
 tu = datetime.datetime.now()
@@ -55,7 +55,7 @@ async def on_guild_join(server):
     joinedguild.add_field(name="Server Regionㅤㅤㅤㅤ", value= f"**{serverreg}**", inline=True)
     joinedguild.add_field(name="Server Owner", value= f"**{serverowner}**", inline=True)
     joinedguild.add_field(name="Owner ID", value= f"**{ownerid}**", inline=True)
-    joinedguild.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p CET"))
+    joinedguild.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p"))
     await owner.send(embed = joinedguild)
 
 #async def msgdev(ctx, user: discord.Member, *, message: str):
@@ -87,7 +87,7 @@ async def server(ctx):
     invite1.description = f"<:yamaiyuzuru1:391525066304782336> Need some help with **Spirit | 精霊** <:bot:389862148395761664>? Here is a link you can use to Support Server! <:yamaikaguya1:391525065608658945>\n\nhttps://discord.gg/efF93Gz"
 
     await ctx.send(embed = invite1)
-    
+
 @bot.command(aliases = ['cmds', 'commands'], description = 'Sends a message with commands in DM')
 async def help(ctx):
 
@@ -101,8 +101,8 @@ async def help(ctx):
     embed = discord.Embed(colour = discord.Colour(0xA522B3))
     embed.set_thumbnail(url = avi)
     embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
-    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm starting in <:pythonbot:392172368023388160> development but I'm also a web designer. \nI wanted to make a BOT to know about how we do them \nbut also because I would like my community to get bigger."
-    embed.add_field(name="Having Issues/Problems?", value="If you have any problems with **Spirit | 精霊** <:bot:389862148395761664>,\nthen you can join us in our **[support server](https://discord.gg/efF93Gz)**, or visit our **[website](https://brokenanimesouls.wixsite.com/spirit-bot)**!", inline=False)
+    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
+    embed.add_field(name="Having Issues/Problems?", value="If you have any problems with **Spirit | 精霊** <:bot:389862148395761664>,\nthen you can join us in our **[support server](https://discord.gg/efF93Gz)**, or visit our **[website](https://prestig-web.wixsite.com/spirit-bot)**!", inline=False)
 
     help1 = discord.Embed(colour = discord.Colour(0xA522B3))
     help1.title = f"Spirit | 精霊  Commands List~♡"
@@ -170,9 +170,9 @@ async def shutdown(ctx):
 
             developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
             shutdown1 = discord.Embed(colour = discord.Colour(0xA522B3))
-            shutdown1.set_author(name='[SHUTDOWN]', url = "https://brokenanimesouls.wixsite.com/spirit-bot")
-            shutdown1.description = f"**Spirit | 精霊** <:bot:389862148395761664> has been **Shutdown For Maintenance** by ***{developer.name}*** ! <:Maintenance:391999920229318668>"
-            shutdown1.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p CET"))
+            shutdown1.set_author(name='[SHUTDOWN]', url = "https://prestig-web.wixsite.com/spirit-bot")
+            shutdown1.description = f"**Spirit | 精霊** has been **Shutdown For Maintenance** by ***{developer.name}*** ! <:Maintenance:391999920229318668>"
+            shutdown1.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p"))
 
             await ctx.send(embed = shutdown1)
             bot.logout()
@@ -205,7 +205,7 @@ async def owner(ctx):
     embed.set_thumbnail(url = avi)
     embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
 
-    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm starting in <:pythonbot:392172368023388160> development but I'm also a web designer. \nI wanted to make a BOT to know about how we do them \nbut also because I would like my community to get bigger."
+    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
 #        embed.add_field(value = "Hi everyone!~♡ I'm Mitohku, the creator of Kurumi BOT")
 #        embed.add_field(value = "I'm starting in Python development but I'm also a web designer.")
 #        embed.add_field(value = "I wanted to make a BOT to know about how we do them")
@@ -230,7 +230,7 @@ async def ctime(ctx):
         choice2 = random.choice(list2)
         clocktime = choice2
         time1 = discord.Embed(colour = discord.Colour(0xA522B3))
-        time1.description = f"{clocktime} **| {ctx.author.name}**, it is currently **{thetime}** CET"
+        time1.description = f"{clocktime} **| {ctx.author.name}**, it is currently **{thetime}**"
         list1 = [
             "https://i.imgur.com/oX1eFiZ.jpg",
             "https://i.imgur.com/q9T8SaQ.jpg",
@@ -255,7 +255,7 @@ async def ping(ctx):
 
         ping1 = discord.Embed(colour = discord.Colour(0xA522B3))
         ping1.description = f"My latency is actually **{pings}s** | **{pingms}ms**."
-        ping1.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p CET"))
+        ping1.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p"))
         await ctx.send(embed = ping1)
 
 
@@ -276,25 +276,70 @@ async def invite(ctx):
 
     await ctx.send(embed = invite1)
 
-@bot.command(aliases = ['game'])
-async def setgame(self, *, text):
-    if await self.bot.is_owner(self.author):
-        game = discord.Game(name="%s"% text)
-        game1 = discord.Embed(colour = discord.Colour(0xA522B3))
+@bot.group()
+async def game(self):
 
-        game1.set_author(name = '[GAME SET]')
-        game1.description = f"**Spirit | 精霊**'s game has been set to: ***{game}*** !  <:KotoriApproves:391550565345132545>"
-        game1.set_footer(text = time.strftime("%d/%m/%Y - %I:%M:%S %p CET"))
-        await self.send(embed = game1)
-        await bot.change_presence(game = game)
+	if game == None:
+		await self.send(f"Please use one of the following settings: `default`, `playing`, `streaming`, `watching`, `listenning` or `clear`")
 
-    else:
-        game2 = discord.Embed(colour = discord.Colour(0xA522B3))
+@game.command(name = 'playing')
+async def game_playing(self, *, game = None):
 
-        game2.set_author(name = '[GAME SET]')
-        game2.description = f"I dont want to play with you, leave me alone! <:OrigamiHides:391661883238645780>"
-        game2.set_footer(text = "You dont have permissions to use this command")
-        await self.send(embed = game2)
+	if not game:
+		await self.send(f"Please enter a status message")
+	else:
+		await self.bot.change_presence(game=discord.Game(name = game))
+		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Playing **{game}**'")
+
+@game.command(name = 'streaming')
+async def game_streaming(self, *, game = None):
+
+	if not game:
+		await self.send(f"Please enter a status message")
+	else:
+		await self.bot.change_presence(game=discord.Game(name = game, url = "https://www.twitch.tv/spiritprod", type = 1))
+		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Streaming **{game}**'")
+
+@game.command(name = 'listenning')
+async def game_listning(self, *, game = None):
+
+	if not game:
+		await self.send(f"Please enter a status message")
+	else:
+		await self.bot.change_presence(game=discord.Game(name = game, type = 2))
+		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Listenning to **{game}**'")
+
+@game.command(name = 'watching')
+async def game_watching(self, *, game = None):
+
+	if not game:
+		await self.send(f"Please enter a status message")
+	else:
+		await self.bot.change_presence(game=discord.Game(name = game, type = 3))
+		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Watching **{game}**'")
+
+@game.command(name = 'default')
+async def game_default(self):
+
+	bot_prefix = "st"
+	server = self.guild
+
+	await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
+
+	games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users | {len(self.bot.guilds)} servers", f"Wanna invite {self.bot.user.name}? Use: {bot_prefix}inv", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
+	current_number = 0
+	while True:
+		if current_number == len(games):
+			current_number = 0
+		await self.bot.change_presence(game=discord.Game(name = games[current_number], url = "https://www.twitch.tv/spiritprod", type = 1))
+		await asyncio.sleep(20)
+		current_number += 1
+
+@game.command(name = 'clear')
+async def game_clear(self, *, game = None):
+
+	await self.bot.change_presence(game=discord.Game(name = None))
+	await self.send(f"Cleared the status of **{self.bot.user.name}**")
 
 #@bot.command()
 #async def test(ctx, *, member : discord.Member=None):
@@ -675,11 +720,11 @@ async def about(self):
     stat1.add_field(name= "Members in all Serversㅤ", value=f"Total Servers: **{servers}** \nTotal Users: **{members}** \nTotal Uniques: **{total_unique}** \nTotal Online: **{total_online}** \nTotal BOTS: **{total_bots}**", inline=True)
     stat1.add_field(name= "Channels in all Servers", value=f"Total Categories: **{categories}** \nTotal Channels: **{channels}** \nText Channels: **{texts}** \nVoice Channels: **{voices}**", inline=True)
     stat1.add_field(name= "Program Informations", value=f"Program Language: **<:pythonbot:392172368023388160> 3.6.3** \nDiscord Program: **Discord.py** \nProgram Version: **1.0.0a**", inline=True)
-    stat1.add_field(name= "ㅤRun/Bot Informations", value=f"ㅤRunning on: **Intel® Core™ 2 Duo** \nㅤEdited with: **Atom** <:Atom:392113050083131402>\n\nㅤ*More with `shelpme` command*", inline=True)
+    stat1.add_field(name= "ㅤRun/Bot Informations", value=f"ㅤRunning on: **Heroku** <:heroku:404015867559542804> \nㅤEdited with: **Sublime Text** <:sublime:404015867416936458>\n\nㅤ*More with `shelp` command*", inline=True)
     stat1.set_footer(text=f"Spirit | 精霊 is active in {servers} servers, containing {members} members.", icon_url=avi3)
     stat1.description= f"\n"
     await self.send(embed = stat1)
-    
+
 
 @bot.command(aliases = ['sb'])
 async def snowball(ctx, *, member : discord.Member = None):
@@ -779,12 +824,13 @@ async def userinfo(ctx, *, member: discord.Member = None):
         e.set_author(name = str(member), icon_url = member.default_avatar_url)
 
     bowner = [219881141551759360]
-    developer = [282088833082720256]
+    developer = [282088833082720256, 371001497342836737]
     helper = [139191103625625600]
     partnered = [166723819074093056]
     youtube = [219881141551759360, 365811841810825216]
     twitch = []
     event = [164902308042375169, 318044181056716800, 304422446621130765]
+    frite = [219881141551759360, 340115321207783424, 290897913431719936]
 
     if not member.voice:
         mute1 = ":question:"
@@ -824,9 +870,20 @@ async def userinfo(ctx, *, member: discord.Member = None):
         if member.id in youtube:
             features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
             features1 = "<:youtube1:391994295223189524> **Partnered Youtuber**"
+            if member.id in frite:
+                features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
+                features1 = "<:twitch1:392000837750226945> **Partnered Streamer**"
+                features2 = "<:FRITEUH:403987790410547202> **Team Frite**"
+        elif member.id in frite:
+            features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
+            features1 = "<:FRITEUH:403987790410547202> **Team Frite**"
         elif member.id in twitch:
             features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
             features1 = "<:twitch1:392000837750226945> **Partnered Streamer**"
+            if member.id in frite:
+                features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
+                features1 = "<:twitch1:392000837750226945> **Partnered Streamer**"
+                features2 = "<:FRITEUH:403987790410547202> **Team Frite**"
         else:
             features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
             features1 = "ㅤ"
@@ -841,7 +898,7 @@ async def userinfo(ctx, *, member: discord.Member = None):
             features1 = "ㅤ"
         elif member.id in partnered:
             features = ":tools: **Bot Developer**"
-            features1 = "<:SpecialRole:391999921349197824> **Partner**"
+            features1 = "<:SpecialRole:391999921349197824> **Partnered Servers***"
         else:
             features = ":tools: **Bot Developer**"
             features1 = "ㅤ"
@@ -849,32 +906,49 @@ async def userinfo(ctx, *, member: discord.Member = None):
         if member.id in youtube:
             features = "<:SpecialRole:391999921349197824> **Helper**"
             features1 = "<:youtube1:391994295223189524> **Partnered Youtuber**"
-            features1 = "ㅤ"
+            features2 = "ㅤ"
         elif member.id in twitch:
             features = "<:SpecialRole:391999921349197824> **Helper**"
             features1 = "<:twitch1:392000837750226945> **Partnered Streamer**"
-            features1 = "ㅤ"
+            features2 = "ㅤ"
         elif member.id in partnered:
             features = "<:SpecialRole:391999921349197824> **Helper**"
-            features1 = "<:SpecialRole:391999921349197824> **Partner**"
+            features1 = "<:SpecialRole:391999921349197824> **Partnered Servers***"
+            features2 = "ㅤ"
         else:
             features = "<:SpecialRole:391999921349197824> **Helper**"
             features1 = "ㅤ"
+            features2 = "ㅤ"
     elif member.id in partnered:
-        features = "<:SpecialRole:391999921349197824> **Partner**"
+        features = "<:SpecialRole:391999921349197824> **Partnered Servers**"
         features1 = "ㅤ"
+        features2 = "ㅤ"
     elif member.id in youtube:
         features = "<:youtube1:391994295223189524> **Partnered Youtuber**"
         features1 = "ㅤ"
+        features2 = "ㅤ"
     elif member.id in twitch:
         features = "<:twitch1:392000837750226945> **Partnered Streamer**"
         features1 = "ㅤ"
+        features2 = "ㅤ"
     elif member.id in event:
         features = ":sparkles: **Special Event Winner**"
         features1 = "ㅤ"
+        features2 = "ㅤ"
+    elif member.id in frite:
+        if member.id in bowner:
+            features = "<:SpecialRole:391999921349197824> **Bot Owner/Creator**"
+            features1 = "<:FRITEUH:403987790410547202> **Team Frite**"
+            features2 = "ㅤ"
+        else:
+            features = "<:FRITEUH:403987790410547202> **Team Frite**"
+            features1 = "ㅤ"
+            features2 = "ㅤ"
+
     else:
         features = "None"
         features1 = "ㅤ"
+        features2 = "ㅤ"
 
     e.set_footer(text = f"Member since: {member.joined_at.__format__('%d %b %Y at %H:%M:%S')}")#.timestamp = member.joined_at
     e.add_field(name = 'User ID', value = member.id)
@@ -883,7 +957,7 @@ async def userinfo(ctx, *, member: discord.Member = None):
     e.add_field(name = 'Client Status', value = status_name)
     e.add_field(name = 'Account created at', value = member.created_at.__format__('Date: **%d %b %Y**\nTime: **%H:%M:%S**'))
     e.add_field(name = 'Highest Role', value = highrole)
-    e.add_field(name = 'Spirit | 精霊 Special Roles', value = f"{features}\n{features1}")
+    e.add_field(name = 'Spirit | 精霊 Special Roles', value = f"{features}\n{features1}\n{features2}")
     e.add_field(name = 'Roles', value = ' **|** '.join(roles) if len(roles) < 15 else f'{len(roles)} roles')
 
     await ctx.send(embed=e)
@@ -905,7 +979,7 @@ async def ctdev(ctx, *, pmessage : str = None):
             embed.set_author(name = "{} sent:".format(ctx.author), icon_url = "{}".format(ctx.author.avatar_url))
             await dev.send(embed = embed)
 #            await dev.send(msg)
-            embed = discord.Embed(description = "I have PMed {}#{} with your feedback! Thank you for your help!".format(dev.name, dev.discriminator), color = 0xA522B3)
+            embed = discord.Embed(description = "I have PMed **{}#{}** with your feedback! Thank you for your help!".format(dev.name, dev.discriminator), color = 0xA522B3)
             await ctx.send(embed = embed)
             await ctx.message.delete()
 #            return await ctx.send(ctx.author.mention + " I have PMed my creator your feedback! Thank you for the help!")
@@ -937,7 +1011,7 @@ async def partner(ctx, *, pmessage : str = None):
         embed = discord.Embed(colour = 0xA522B3)
         embed.set_author(name = "[PARTNERS LIST]", icon_url = "https://cdn.discordapp.com/emojis/391999921349197824.png")
         embed.description = "*These lists use a long time to be updated, if you not on after 1h:  `sfeedback`*"
-        embed.add_field(name = f"ㅤ¤ Partnered Servers <:discord:390659518658379776>", value = "*Spirit | 精霊  [Bot Support Server]*  **⇨** [https://discord.gg/efF93Gz](https://discord.gg/efF93Gz)\n\n*OtakuAnimeGamerzGuild*  **⇨** [https://discord.gg/vX9yGxa](https://discord.gg/vX9yGxa)\n\n*❄ COOKIE SERV ❄*  **⇨** [https://discord.gg/k9KNfwy](https://discord.gg/k9KNfwy)", inline=False)
+        embed.add_field(name = f"ㅤ¤ Partnered Servers <:discord:390659518658379776>", value = "*Spirit | 精霊  [Bot Support Server]*  **⇨** [https://discord.gg/efF93Gz](https://discord.gg/efF93Gz)\n\n*OtakuAnimeGamerzGuild*  **⇨** [https://discord.gg/vX9yGxa](https://discord.gg/vX9yGxa)\n\n*DiViSiOn | Structure Officiel*  **⇨** [https://discord.gg/vT3xFC8](https://discord.gg/vT3xFC8)", inline=False)
         await ctx.send(embed = embed)
     else:
         embed = discord.Embed(colour = 0xA522B3)
@@ -972,11 +1046,11 @@ async def advert(ctx):
     embed.set_footer(text = "Advert")
     adv1 = bot.get_channel("391876763069972480")
     await adv1.send(embed = embed)
-    await ctx.send(ctx.message.author, "Thanks for your advertisement!")        
-    
+    await ctx.send(ctx.message.author, "Thanks for your advertisement!")
+
 @bot.command(aliases = ['changelogs'])
 async def cl(self):
-    
+
     if await self.bot.is_owner(self.author):
 
             developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
@@ -1010,11 +1084,12 @@ async def cl(self):
             await channel.send(embed=embed)
     else:
             developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
-            embed = discord.Embed(colour = discord.Colour(0xA522B3)) 
+            embed = discord.Embed(colour = discord.Colour(0xA522B3))
             embed.set_author(name = f"[CHANGELOGS]")
             embed.set_footer(text = "You dont have permissions to use this command")
 
             await self.send(embed = embed)
+
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if not os.environ.get('TOKEN'):
