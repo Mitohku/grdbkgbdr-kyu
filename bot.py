@@ -15,7 +15,7 @@ import aiohttp
 from collections                import Counter
 
 
-command_prefix = "st" #CHANGE IT TO WHAT YOU WANT
+command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
 description = "PrestiG's own BOT" #ALSO CHANGE THIS
 bot = commands.Bot(command_prefix, description = description)
 bot.remove_command('help')
