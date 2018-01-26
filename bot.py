@@ -71,6 +71,24 @@ async def on_guild_join(server):
 #    await bot.send_message(bot.get_user('371001497342836737', embed = embed))
 #    await bot.say("**☑  |  Message sent to Rapid**")
 
+@bot.command(aliases = ['nos', 'slimmy', 'slime', 'noslime'])
+async def noslimmy(ctx, *, member : discord.Member=None):
+    if not member:
+        await ctx.send(f"Please **mention** the person who is a **MEAN SLIMMY** !")
+    else:
+	slimmy2 = bot.get_user(305792429590708225)
+        author = ctx.message.author.mention
+        mention = member.mention
+	
+	slimmy1 = discord.Embed(colour = discord.Colour(0xA522B3))
+	
+	slimmy1.set_thumbnail(url = "https://imgur.com/a/gkgXG")
+	slimmy1.set_author(name = "No to mean Slimmies!", icon_url = "https://imgur.com/a/gkgXG")
+	slimmy.description = f"<:noslimmy:406546663423868938> {mention} has been a ***MEAN SLIMMY***  ! {author} punished and sent them to **__Slimmy Jail__**! <:noslimmy:406546663423868938>"
+	slimmy.set_footer(text = f"Yup, it's confirmed. {mention} is a real MEAN SLIMMY!")
+	
+	await ctx.send(embed = slimmy1)
+	
 @bot.command(aliases = ['support', 'serv'])
 async def server(ctx):
 
