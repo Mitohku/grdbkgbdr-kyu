@@ -81,9 +81,6 @@ async def noslimmy(ctx, *, member : discord.Member=None):
         name3 = member.name
 	
         slimmy1 = discord.Embed(colour = discord.Colour(0xA522B3))
-	
-        slimmy1.set_thumbnail(url = choice)
-        slimmy1.set_author(name = "No to mean Slimmies!", icon_url = choice)
         list1 = [
             "https://i.imgur.com/N0vF1ei.png"
         ]
@@ -91,7 +88,8 @@ async def noslimmy(ctx, *, member : discord.Member=None):
         slimmy1.set_footer(text = f"Yup, it's confirmed. {name3} is a real MEAN SLIMMY!")
 	
         choice = random.choice(list1)
-        time1.set_image(url = choice)
+        slimmy1.set_author(name = "NO TO MEAN SLIMMIES!", icon_url = choice)
+        slimmy1.set_thumbnail(url = choice)
         await ctx.send(embed = slimmy1)
 	
 @bot.command(aliases = ['support', 'serv'])
