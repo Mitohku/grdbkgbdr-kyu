@@ -84,9 +84,9 @@ async def noslimmy(ctx, *, member : discord.Member=None):
 	
         slimmy1.set_thumbnail(url = choice)
         slimmy1.set_author(name = "No to mean Slimmies!", icon_url = choice)
-    list1 = [
-        "https://i.imgur.com/N0vF1ei.png"
-    ]
+        list1 = [
+            "https://i.imgur.com/N0vF1ei.png"
+        ]
         slimmy1.description = f"<:noslimmy:406546663423868938> {mention} has been a ***MEAN SLIMMY***  !\n{author} punished & sent them to **__Slimmy Jail__**! <:noslimmy:406546663423868938>"
         slimmy1.set_footer(text = f"Yup, it's confirmed. {name3} is a real MEAN SLIMMY!")
 	
