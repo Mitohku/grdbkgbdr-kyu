@@ -79,7 +79,7 @@ async def noslimmy(ctx, *, member : discord.Member=None):
         author = ctx.message.author.mention
         mention = member.mention
         name3 = member.name
-        avi8 = 'https://imgur.com/a/gkgXG'
+        avi8 = 'https://image.noelshack.com/fichiers/2018/04/5/1517000936-noslimmy.png'
 	
         slimmy1 = discord.Embed(colour = discord.Colour(0xA522B3))
 	
