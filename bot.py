@@ -78,13 +78,15 @@ async def noslimmy(ctx, *, member : discord.Member=None):
     else:
         author = ctx.message.author.mention
         mention = member.mention
+	name3 = member.name
+	avi8 = 'https://imgur.com/a/gkgXG'
 	
     slimmy1 = discord.Embed(colour = discord.Colour(0xA522B3))
 	
-    slimmy1.set_thumbnail(url = "https://imgur.com/a/gkgXG")
-    slimmy1.set_author(name = "No to mean Slimmies!", icon_url = "https://imgur.com/a/gkgXG")
-    slimmy1.description = f"<:noslimmy:406546663423868938> {mention} has been a ***MEAN SLIMMY***  ! {author} punished and sent them to **__Slimmy Jail__**! <:noslimmy:406546663423868938>"
-    slimmy1.set_footer(text = f"Yup, it's confirmed. {mention} is a real MEAN SLIMMY!")
+    slimmy1.set_thumbnail(url = avi8)
+    slimmy1.set_author(name = "No to mean Slimmies!", icon_url = avi8)
+    slimmy1.description = f"<:noslimmy:406546663423868938> {mention} has been a ***MEAN SLIMMY***  !\n{author} punished & sent them to **__Slimmy Jail__**! <:noslimmy:406546663423868938>"
+    slimmy1.set_footer(text = f"Yup, it's confirmed. {name3} is a real MEAN SLIMMY!")
 	
     await ctx.send(embed = slimmy1)
 	
