@@ -342,6 +342,7 @@ async def game_default(self):
                   server = self.guild
                   games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users | {len(self.bot.guilds)} servers", f"Wanna invite {self.bot.user.name}? Use: {bot_prefix}inv", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
                   current_number = 0
+		  await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
                   while True:
                         if current_number == len(games):
                               current_number = 0
