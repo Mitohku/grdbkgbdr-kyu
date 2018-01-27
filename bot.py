@@ -122,7 +122,7 @@ async def help(ctx):
     embed = discord.Embed(colour = discord.Colour(0xA522B3))
     embed.set_thumbnail(url = avi)
     embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
-    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
+    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
     embed.add_field(name="Having Issues/Problems?", value="If you have any problems with **Spirit | 精霊** <:bot:389862148395761664>,\nthen you can join us in our **[support server](https://discord.gg/efF93Gz)**, or visit our **[website](https://prestig-web.wixsite.com/spirit-bot)**!", inline=False)
 
     help1 = discord.Embed(colour = discord.Colour(0xA522B3))
@@ -153,26 +153,6 @@ async def christmas(ctx):
     embed=discord.Embed(colour = discord.Colour(0xA522B3))
     embed.add_field(name=":gift::christmas_tree::santa:Time left until Christmas:santa::christmas_tree::gift:",
         value=f"{weeks} weeks, {days} days, {hours} hours, {minutes} minutes, {seconds} seconds.")
-    await ctx.send(embed=embed)
-
-@bot.command(aliases=["devbday"])
-async def ownerbday(ctx):
-    now=datetime.datetime.utcnow()
-    bday1 = now.year + 1
-    bday=datetime.datetime(bday1, 11, 15)
-    if bday<now:
-        bday=bday.replace(year=now.year+1)
-    delta=bday-now
-    y, remainder4=divmod(int(delta.total_seconds()), 31536025)
-    months, remainder5=divmod(remainder4, 2592000)
-    weeks, remainder=divmod(remainder5, 604800)
-    days, remainder2=divmod(remainder, 86400)
-    hours, remainder3=divmod(remainder2, 3600)
-    minutes, seconds=divmod(remainder3, 60)
-
-    embed=discord.Embed(colour = discord.Colour(0xA522B3))
-    embed.add_field(name=":gift:<:Maintenance:391999920229318668>:gift:Time left until Bot Owner's Birthday:gift:<:Maintenance:391999920229318668>:gift:",
-        value=f"{y} year, {months} months, {weeks} weeks, {days} days, {hours} hours, {minutes} minutes.")
     await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
@@ -226,7 +206,7 @@ async def owner(ctx):
     embed.set_thumbnail(url = avi)
     embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
 
-    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI'm started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
+    embed.description = f"Hi everyone!~♡ I'm **{developer.name}**, the creator of **Spirit | 精霊** <:bot:389862148395761664> \nI started making the bot in <:pythonbot:392172368023388160> and I'm also a web designer & designer. \nI wanted to make a BOT to know about how we do them \nbut also because my dream is to become **Discord Partner**."
 #        embed.add_field(value = "Hi everyone!~♡ I'm Mitohku, the creator of Kurumi BOT")
 #        embed.add_field(value = "I'm starting in Python development but I'm also a web designer.")
 #        embed.add_field(value = "I wanted to make a BOT to know about how we do them")
@@ -300,67 +280,88 @@ async def invite(ctx):
 @bot.group()
 async def game(self):
 
-	if game == None:
-		await self.send(f"Please use one of the following settings: `default`, `playing`, `streaming`, `watching`, `listenning` or `clear`")
+      if game == None:
+            await self.send(f"Please use one of the following settings: `default`, `playing`, `streaming`, `watching`, `listenning` or `clear`")
 
 @game.command(name = 'playing')
 async def game_playing(self, *, game = None):
 
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		await self.bot.change_presence(game=discord.Game(name = game))
-		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Playing **{game}**'")
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  await self.bot.change_presence(game=discord.Game(name = game))
+                  await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Playing **{game}**'")
+      else:
+            await self.send("You dont have permissions to use this command")
 
 @game.command(name = 'streaming')
 async def game_streaming(self, *, game = None):
 
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		await self.bot.change_presence(game=discord.Game(name = game, url = "https://www.twitch.tv/spiritprod", type = 1))
-		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Streaming **{game}**'")
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  await self.bot.change_presence(game=discord.Game(name = game, url = "https://www.twitch.tv/spiritprod", type = 1))
+                  await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Streaming **{game}**'")
+      else:
+            await self.send("You dont have permissions to use this command")
 
 @game.command(name = 'listenning')
 async def game_listning(self, *, game = None):
 
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		await self.bot.change_presence(game=discord.Game(name = game, type = 2))
-		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Listenning to **{game}**'")
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  await self.bot.change_presence(game=discord.Game(name = game, type = 2))
+                  await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Listenning to **{game}**'")
+      else:
+            await self.send("You dont have permissions to use this command")
 
 @game.command(name = 'watching')
 async def game_watching(self, *, game = None):
 
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		await self.bot.change_presence(game=discord.Game(name = game, type = 3))
-		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Watching **{game}**'")
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  await self.bot.change_presence(game=discord.Game(name = game, type = 3))
+                  await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Watching **{game}**'")
+      else:
+            await self.send("You dont have permissions to use this command")
 
 @game.command(name = 'default')
 async def game_default(self):
 
-	bot_prefix = "s"
-	server = self.guild
-
-	await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
-
-	games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users | {len(self.bot.guilds)} servers", f"Wanna invite {self.bot.user.name}? Use: {bot_prefix}inv", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
-	current_number = 0
-	while True:
-		if current_number == len(games):
-			current_number = 0
-		await self.bot.change_presence(game=discord.Game(name = games[current_number], url = "https://www.twitch.tv/spiritprod", type = 1))
-		await asyncio.sleep(20)
-		current_number += 1
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  bot_prefix = "s"
+                  server = self.guild
+                  games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users | {len(self.bot.guilds)} servers", f"Wanna invite {self.bot.user.name}? Use: {bot_prefix}inv", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
+                  current_number = 0
+                  while True:
+                        if current_number == len(games):
+                              current_number = 0
+                        await self.bot.change_presence(game=discord.Game(name = games[current_number], url = "https://www.twitch.tv/spiritprod", type = 1))
+                        await asyncio.sleep(12)
+                        current_number += 1
+      else:
+            await self.send("You dont have permissions to use this command")
 
 @game.command(name = 'clear')
 async def game_clear(self, *, game = None):
 
-	await self.bot.change_presence(game=discord.Game(name = None))
-	await self.send(f"Cleared the status of **{self.bot.user.name}**")
+      if await self.bot.is_owner(self.author):
+            if not game:
+                  await self.send(f"Please enter a status message")
+            else:
+                  await self.bot.change_presence(game=discord.Game(name = None))
+                  await self.send(f"Cleared the status of **{self.bot.user.name}**")
+      else:
+            await self.send("You dont have permissions to use this command")
 
 #@bot.command()
 #async def test(ctx, *, member : discord.Member=None):
