@@ -16,7 +16,7 @@ from collections                import Counter
 
 
 command_prefix = "s" #CHANGE IT TO WHAT YOU WANT
-description = "PrestiG's own BOT" #ALSO CHANGE THIS
+description = "Say's own BOT" #ALSO CHANGE THIS
 bot = commands.Bot(command_prefix, description = description)
 bot.remove_command('help')
 tu = datetime.datetime.now()
@@ -38,7 +38,7 @@ async def on_ready():
 @bot.event
 async def on_guild_join(server):
     print("New Server Joined: {.name}!\n\n".format(server))
-    owner=bot.get_user(219881141551759360)
+    owner=bot.get_user(385419569558323202)
     servername= server.name
     serverreg= server.region
     serverinv= str(server)
@@ -112,7 +112,7 @@ async def server(ctx):
 @bot.command(aliases = ['cmds', 'commands'], description = 'Sends a message with commands in DM')
 async def help(ctx):
 
-    developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+    developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
 
     if developer.avatar_url[54:].startswith('a_'):
         avi = 'https://cdn.discordapp.com/avatars/' + developer.avatar_url[35:-10]
@@ -169,7 +169,7 @@ async def shutdown(ctx):
     '''Fallback if mod cog couldn't load'''
     if await ctx.bot.is_owner(ctx.author):
 
-            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
             shutdown1 = discord.Embed(colour = discord.Colour(0xA522B3))
             shutdown1.set_author(name='[SHUTDOWN]', url = "https://prestig-web.wixsite.com/spirit-bot")
             shutdown1.description = f"**Spirit | 精霊** has been **Shutdown For Maintenance** by ***{developer.name}*** ! <:Maintenance:391999920229318668>"
@@ -179,7 +179,7 @@ async def shutdown(ctx):
             bot.logout()
             sys.exit(0)
     else:
-            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
             shutdown2 = discord.Embed(colour = discord.Colour(0xA522B3))
             list17 = [
             ":speech_left:⠀**|⠀*Kurumi Tokisaki***\n```You were ready to kill another creature, yet you are scared to be killed. Dont you think that is weird? When you point a gun at another life... This is what happens.```",
@@ -194,7 +194,7 @@ async def shutdown(ctx):
 @bot.command(aliases = ['creator', 'dev', 'developer'], description = 'Who is my creator?')
 async def owner(ctx):
 
-    developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+    developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
 
     if developer.avatar_url[54:].startswith('a_'):
         avi = 'https://cdn.discordapp.com/avatars/' + developer.avatar_url[35:-10]
@@ -786,7 +786,7 @@ async def snowball(ctx, *, member : discord.Member = None):
             choice_miss = random.choice(snowball_miss)
             miss = discord.Embed(colour = discord.Colour(0xA522B3))
             miss.description = f"{choice_miss}"
-            kawaii = bot.get_user(139191103625625600)
+            kawaii = bot.get_user(385419569558323202)
             miss.set_footer(text=f"| ©  {kawaii.name} |", icon_url= kawaii.avatar_url)
             await ctx.send(embed = miss)
 
@@ -846,14 +846,14 @@ async def userinfo(ctx, *, member: discord.Member = None):
         e.set_thumbnail(url = member.default_avatar_url)
         e.set_author(name = str(member), icon_url = member.default_avatar_url)
 
-    bowner = [219881141551759360]
+    bowner = [385419569558323202]
     developer = [282088833082720256, 371001497342836737]
     helper = [139191103625625600]
     partnered = [166723819074093056]
-    youtube = [219881141551759360, 365811841810825216]
+    youtube = [385419569558323202, 365811841810825216]
     twitch = []
     event = [164902308042375169, 318044181056716800, 304422446621130765]
-    frite = [219881141551759360, 340115321207783424, 290897913431719936]
+    frite = [385419569558323202, 340115321207783424, 290897913431719936]
 
     if not member.voice:
         mute1 = ":question:"
@@ -988,7 +988,7 @@ async def userinfo(ctx, *, member: discord.Member = None):
 @bot.command(pass_context = True, aliases = ['feedback', 'fb', 'msgdev'])
 async def ctdev(ctx, *, pmessage : str = None):
     invite = await ctx.channel.create_invite(max_uses = 1, xkcd = True)
-    bot_owner = 219881141551759360
+    bot_owner = 385419569558323202
     dev = bot.get_user(bot_owner)
 
     if pmessage == None:
@@ -1022,7 +1022,7 @@ async def partner(ctx, *, pmessage : str = None):
         embed = discord.Embed(colour = 0xA522B3)
         embed.set_author(name = "[PARTNERS LIST]", icon_url = "https://cdn.discordapp.com/emojis/391999921349197824.png")
         embed.description = "*These lists use a long time to be updated, if you not on after 1h:  `sfeedback`*"
-        embed.add_field(name = "ㅤ¤ Partnered Youtubers <:youtube1:391994295223189524>", value = "*PrestiG*  **⇨** [No Link Available](https://www.google.com/)\n\n*INCONNU*  **⇨** [https://www.youtube.com/channel/UCazB2im7mKdGzdKZouDGfRg](https://www.youtube.com/channel/UCazB2im7mKdGzdKZouDGfRg)", inline=False)
+        embed.add_field(name = "ㅤ¤ Partnered Youtubers <:youtube1:391994295223189524>", value = "*Say'*  **⇨** [No Link Available](https://www.google.com/)\n\n*INCONNU*  **⇨** [https://www.youtube.com/channel/UCazB2im7mKdGzdKZouDGfRg](https://www.youtube.com/channel/UCazB2im7mKdGzdKZouDGfRg)", inline=False)
         await ctx.send(embed = embed)
     elif pmessage == "twitch":
         embed = discord.Embed(colour = 0xA522B3)
@@ -1076,7 +1076,7 @@ async def cl(self):
 
     if await self.bot.is_owner(self.author):
 
-            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
             bot1 = bot.get_user(390478999828037632)
 
             if developer.avatar_url[54:].startswith('a_'):
@@ -1106,7 +1106,7 @@ async def cl(self):
             await channel.send(f"@everyone, heyy there is a new update!")
             await channel.send(embed=embed)
     else:
-            developer = bot.get_user(219881141551759360) # commands.get_user(commands.owner_id)
+            developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
             embed = discord.Embed(colour = discord.Colour(0xA522B3))
             embed.set_author(name = f"[CHANGELOGS]")
             embed.set_footer(text = "You dont have permissions to use this command")
