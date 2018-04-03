@@ -286,7 +286,7 @@ async def game(self):
 @game.command(name = 'playing')
 async def game_playing(self, *, game = None):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
@@ -298,7 +298,7 @@ async def game_playing(self, *, game = None):
 @game.command(name = 'streaming')
 async def game_streaming(self, *, game = None):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
@@ -310,7 +310,7 @@ async def game_streaming(self, *, game = None):
 @game.command(name = 'listenning')
 async def game_listning(self, *, game = None):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
@@ -322,7 +322,7 @@ async def game_listning(self, *, game = None):
 @game.command(name = 'watching')
 async def game_watching(self, *, game = None):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
@@ -334,7 +334,7 @@ async def game_watching(self, *, game = None):
 @game.command(name = 'default')
 async def game_default(self):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
@@ -355,7 +355,7 @@ async def game_default(self):
 @game.command(name = 'clear')
 async def game_clear(self, *, game = None):
 
-      if await self.author == bot.get_user(390478999828037632):
+      if self.author == bot.get_user(390478999828037632):
             if not game:
                   await self.send(f"Please enter a status message")
             else:
