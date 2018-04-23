@@ -167,7 +167,7 @@ async def roles(ctx):
 @bot.command(hidden=True, aliases=['kill', 'sd'])
 async def shutdown(ctx):
     '''Fallback if mod cog couldn't load'''
-	dev = bot.get_user(385419569558323202)
+    dev = bot.get_user(385419569558323202)
     if await ctx.author == dev:
 
             developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
