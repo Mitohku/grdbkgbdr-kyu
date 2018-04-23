@@ -167,7 +167,7 @@ async def roles(ctx):
 @bot.command(hidden=True, aliases=['kill', 'sd'])
 async def shutdown(ctx):
     '''Fallback if mod cog couldn't load'''
-    if await ctx.bot.is_owner(ctx.author):
+    if await ctx.author(bot.get_user(385419569558323202)):
 
             developer = bot.get_user(385419569558323202) # commands.get_user(commands.owner_id)
             shutdown1 = discord.Embed(colour = discord.Colour(0xA522B3))
