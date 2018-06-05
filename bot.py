@@ -56,7 +56,7 @@ async def help(ctx):
 	help1.add_field(name="Core Commands", value="`shelp` **|** `ssetgame`", inline=False)
 	help1.add_field(name="Utility Commands", value="`sping` **|** `sprofile` **|** `sabout` **|** `savatar` **|** `sgicon`", inline=False)
 	help1.add_field(name="Fun Commands", value="`ssnowball` **|** `svhug`", inline=False)
-	help1.add_field(name="Kawaii Commands", value="`shug` **|** `sblush` **|** `sscared` **|** `sdance` **|** `skiss` **|** `slewd` **|** `slick` **|** `spet` **|** `ssmug` **|** `scry` **|** `shappy` **|** `sfun` **|** `ssing` **|** `sattack` **|** `seat` **|** `skms` **|** `swink` **|** `snom`", inline=False)
+	help1.add_field(name="Kawaii Commands", value="`shug` **|** `sblush` **|** `sscared` **|** `sdance` **|** `skiss` **|** `slewd` **|** `slick` **|** `spat` **|** `ssmug` **|** `scry` **|** `shappy` **|** `sfun` **|** `ssing` **|** `sattack` **|** `seat` **|** `skms` **|** `swink` **|** `snom`", inline=False)
 	help1.add_field(name="Extra Commands", value="`sfeedback` **|** `sowner`", inline=False)
 	help1.set_footer(text = "Have fun using Sinful~♡")
 
@@ -163,29 +163,24 @@ async def game_watching(self, *, game = None):
 @game.command(name = 'default')
 async def game_default(self):
 
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		bot_prefix = "s"
-		server = self.guild
-		games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users on server", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
-		current_number = 0
-		await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
-		while True:
-			if current_number == len(games):
-				current_number = 0
-			await self.bot.change_presence(game=discord.Game(name = games[current_number], url = "https://www.twitch.tv/spiritprod", type = 1))
-			await asyncio.sleep(12)
-			current_number += 1
+	bot_prefix = "p!"
+	server = self.guild
+
+	await self.send(f"**{self.bot.user.name}**'s status succesfully changed to 'Default'")
+
+	games = [f"Use {bot_prefix}help for help!", f"{sum(1 for _ in self.bot.get_all_members())} users on server", f"Give us feedback? Use: {bot_prefix}feedback [message]"]
+	current_number = 0
+	while True:
+		if current_number == len(games):
+			current_number = 0
+		await self.bot.change_presence(game=discord.Game(name = games[current_number], url = "https://www.twitch.tv/spiritprod", type = 1))
+		await asyncio.sleep(20)
+		current_number += 1
 
 @game.command(name = 'clear')
 async def game_clear(self, *, game = None):
-
-	if not game:
-		await self.send(f"Please enter a status message")
-	else:
-		await self.bot.change_presence(game=discord.Game(name = None))
-		await self.send(f"Cleared the status of **{self.bot.user.name}**")
+	await self.bot.change_presence(game=discord.Game(name = None))
+	await self.send(f"Cleared the status of **{self.bot.user.name}**")
 
 
 
