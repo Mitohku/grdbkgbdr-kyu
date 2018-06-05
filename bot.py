@@ -47,18 +47,18 @@ async def help(ctx):
 	embed = discord.Embed(colour = discord.Colour(0xE4D7FF))
 	embed.set_thumbnail(url = avi)
 	embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
-	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that BOT because ~~I love Kyu and Fae and have a crush on them~~ >.> *(yea I don't hide)*"
+	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that <:bot:453635744960086026> because *~~I love Kyu and Fae and have a crush on them~~* >.> *(yea I don't hide)*"
 	embed.add_field(name="Having Issues/Problems?", value="If you have any problems with **Sinful** <:bot:453635744960086026>,\nthen you can send a message to developer with `sfeedback [message]`", inline=False)
 
 	help1 = discord.Embed(colour = discord.Colour(0xE4D7FF))
 	help1.title = f"Sinful Commands List~♡"
 	help1.description = f"**Sinful** <:bot:453635744960086026>'s prefix is **s**.\n\n"
 	help1.add_field(name="Core Commands", value="`shelp` **|** `ssetgame`", inline=False)
-	help1.add_field(name="Utility Commands", value="`sping` **|** `sprofile` **|** `sabout`", inline=False)
-	help1.add_field(name="Fun Commands", value="`ssnowball`", inline=False)
+	help1.add_field(name="Utility Commands", value="`sping` **|** `sprofile` **|** `sabout` **|** `savatar` **|** `sgicon`", inline=False)
+	help1.add_field(name="Fun Commands", value="`ssnowball` **|** `svhug`", inline=False)
 	help1.add_field(name="Kawaii Commands", value="`shug` **|** `sblush` **|** `sscared` **|** `sdance` **|** `skiss` **|** `slewd` **|** `slick` **|** `spet` **|** `ssmug` **|** `scry` **|** `shappy` **|** `sfun` **|** `ssing` **|** `sattack` **|** `seat` **|** `skms` **|** `swink` **|** `snom`", inline=False)
-	help1.add_field(name="Extra Commands", value="`sfeedback` **|** sowner", inline=False)
-	help1.set_footer(text = "Have fun using Sinful")
+	help1.add_field(name="Extra Commands", value="`sfeedback` **|** `sowner`", inline=False)
+	help1.set_footer(text = "Have fun using Sinful~♡")
 
 	await ctx.send(embed = embed)
 	await ctx.send(embed = help1)
@@ -84,7 +84,7 @@ async def owner(ctx):
 	embed.set_thumbnail(url = avi)
 	embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
 
-	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that BOT because ~~I love Kyu and Fae and have a crush on them~~ >.> *(yea I don't hide)*"
+	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that <:bot:453635744960086026> because *~~I love Kyu and Fae and have a crush on them~~* >.> *(yea I don't hide)*"
 
 	await ctx.send(embed = embed)
 
