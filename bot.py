@@ -121,11 +121,8 @@ async def latency(ctx):
 @bot.group()
 async def game(self):
 
-	if self.author == bot.get_user(385419569558323202):
-		if game == None:
-			await self.send(f"Please use one of the following settings: `default`, `playing`, `streaming`, `watching`, `listenning` or `clear`")
-	else:
-		await self.send("You dont have permissions to use this command")
+	if game == None:
+		await self.send(f"Please use one of the following settings: `default`, `playing`, `streaming`, `watching`, `listenning` or `clear`")
 
 @game.command(name = 'playing')
 async def game_playing(self, *, game = None):
