@@ -561,13 +561,8 @@ async def about(self):
         voices+=len(guild.voice_channels)
 
     stat2 = bot.get_user(390478999828037632)
-    if stat2.avatar_url[54:].startswith('a_'):
-        avi3 = 'https://cdn.discordapp.com/avatars/' + stat2.avatar_url[35:-10]
-    else:
-        avi3 = stat2.avatar_url
 
-    stat1.set_thumbnail(url = avi3)
-    stat1.set_author(name= stat2, icon_url= avi3)
+    stat1.set_author(name= stat2)
     stat1.add_field(name= "Members in serverㅤ", value=f"Total Users: **{members}** \nTotal Uniques: **{total_unique}** \nTotal Online: **{total_online}** \nTotal BOTS: **{total_bots}**", inline=True)
     stat1.add_field(name= "Channels in server", value=f"Total Categories: **{categories}** \nTotal Channels: **{channels}** \nText Channels: **{texts}** \nVoice Channels: **{voices}**", inline=True)
     stat1.add_field(name= "Program Informations", value=f"Program Language: **<:Python:453634265197051934> 3.6.3** \nDiscord Program: **Discord.py** \nProgram Version: **1.0.0a**", inline=True)
