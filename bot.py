@@ -47,7 +47,7 @@ async def help(ctx):
 	embed = discord.Embed(colour = discord.Colour(0xE4D7FF))
 	embed.set_thumbnail(url = avi)
 	embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
-	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that <:bot:453635744960086026> because *~~I love Kyu and Fae and have a crush on them~~* >.> *(yea I don't hide)*"
+	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer."
 	embed.add_field(name="Having Issues/Problems?", value="If you have any problems with **Sinful** <:bot:453635744960086026>,\nthen you can send a message to developer with `sfeedback [message]`", inline=False)
 
 	help1 = discord.Embed(colour = discord.Colour(0xE4D7FF))
@@ -84,7 +84,7 @@ async def owner(ctx):
 	embed.set_thumbnail(url = avi)
 	embed.set_author(name = developer, url = "https://discord.gg/efF93Gz", icon_url = avi)
 
-	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer. \nI made that <:bot:453635744960086026> because *~~I love Kyu and Fae and have a crush on them~~* >.> *(yea I don't hide)*"
+	embed.description = f"Hi everyone! I'm **{developer.name}**, the creator of **Sinful** <:bot:453635744960086026> \nI'm a Bot Developer but I'm also a Web Designer & Designer."
 
 	await ctx.send(embed = embed)
 
